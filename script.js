@@ -46,6 +46,12 @@ function drawBricks() {
     });
 }
 
+// Draw score on canvas
+function drawScore() {
+    ctx.font = "20px Arial";
+    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+}
+
 // Rules and close event handlers
 rulesBtn.addEventListener("click", () => rules.classList.add("show"));
 closeBtn.addEventListener("click", () => rules.classList.remove("show"));
