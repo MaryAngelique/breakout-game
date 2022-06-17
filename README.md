@@ -17,11 +17,13 @@
 
 Users should be able to:
 
-#### - 
+#### - See the rules by clicking "Show Rules"
 
-#### - 
+#### - Move the paddle by clicking the left and right arrow on their keyboards
 
-#### - 
+#### - See their scores
+
+#### - If they failed to catch the ball with the paddle, the board/game will restart and the score will be back to 0
 
 ### Features
 
