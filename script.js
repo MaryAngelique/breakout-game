@@ -4,6 +4,12 @@ const rules = document.getElementById("rules");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+let score = 0;
+
+const brickRowCount = 9;
+const brickColumnCount = 5;
+const delay = 500; //delay to reset the game
+
 // Create ball props
 const ball = {
     x: canvas.width / 2,
@@ -36,6 +42,17 @@ const brickInfo = {
     visible: true
 };
 
+// Create bricks
+const bricks = [];
+for (let i = 0; i < brickRowCount; i++) {
+    bricks[i] = [];
+    for (let j = 0; j < brickColumnCount; j++) {
+        const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX;
+        const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY;
+        bricks[i][j] = { x, y, ...brickInfo };
+    }
+}
+
 // Draw ball on canvas
 function drawBall() {
     ctx.beginPath();
@@ -66,6 +83,12 @@ function drawBricks() {
         });
     });
 }
+
+// Draw score on canvas
+function drawScore() {
+    ctx.font = '20px Arial';
+    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
+} 
 
 // Move paddle on canvas
 function movePaddle() {
@@ -153,6 +176,13 @@ function increaseScore() {
             paddle.visible = true;
         },delay)
     }
+}
+
+// Make all bricks appear
+function showAllBricks() {
+    bricks.forEach(column => {
+      column.forEach(brick => (brick.visible = true));
+    });
 }
 
 // Draw everything
