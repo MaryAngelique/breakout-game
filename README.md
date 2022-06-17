@@ -34,16 +34,15 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Breakout Game GitHub Solution](https://github.com/MaryAngelique/breakout-game)
-- Live Site URL: Breakout Game Website
+- Live Site URL: [Breakout Game Website](https://breakout-game-zero.vercel.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
+- HTML Canvas
 - VanillaJS
-- Asynchronous JavaScript
-- API Request
 - CSS custom properties
 - CSS Flexbox properties
 - CSS Grid properties
