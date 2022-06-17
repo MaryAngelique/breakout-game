@@ -36,8 +36,6 @@ const brickInfo = {
     visible: true
 };
 
-
-
 // Draw ball on canvas
 function drawBall() {
     ctx.beginPath();
@@ -74,6 +72,25 @@ function drawScore() {
     ctx.font = "20px Arial";
     ctx.fillText(`Score: ${score}`, canvas.width - 100, 30);
 }
+
+// Draw everything
+function draw() {
+    drawBall();
+    drawPaddle();
+    drawScore();
+    drawBricks();
+}
+
+// Update canvas drawing and animation
+function update() {
+    movePaddle();
+    moveBall();
+  
+    // Draw everything
+    draw();
+  
+    requestAnimationFrame(update);
+}  
 
 // Rules and close event handlers
 rulesBtn.addEventListener("click", () => rules.classList.add("show"));
