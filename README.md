@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [ GitHub Solution](GitHub )
-- Live Site URL: [ Website](Deployed website)
+- Solution URL: [Breakout Game GitHub Solution](https://github.com/MaryAngelique/breakout-game)
+- Live Site URL: Breakout Game Website
 
 ## My process
 
