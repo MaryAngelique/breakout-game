@@ -67,6 +67,20 @@ function drawBricks() {
     });
 }
 
+// Move paddle on canvas
+function movePaddle() {
+    paddle.x += paddle.dx;
+  
+    // Wall detection
+    if (paddle.x + paddle.w > canvas.width) {
+      paddle.x = canvas.width - paddle.w;
+    }
+
+    if (paddle.x < 0) {
+        paddle.x = 0;
+    }
+}
+
 // Draw score on canvas
 function drawScore() {
     ctx.font = "20px Arial";
@@ -90,7 +104,13 @@ function update() {
     draw();
   
     requestAnimationFrame(update);
-}  
+} 
+
+update();
+
+// Keyboard event handlers
+document.addEventListener("keydown", keyDown);
+document.addEventListener("keyup", keyUp);
 
 // Rules and close event handlers
 rulesBtn.addEventListener("click", () => rules.classList.add("show"));
